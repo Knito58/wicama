@@ -11,7 +11,7 @@ on:
 env:
   CF_PROJECT_ID: "1784980"
   # CurseForge names, adjust here if CurseForge renames them:
-  CF_GAME_VERSIONS: "26.3,Fabric,Java 25"
+  CF_GAME_VERSIONS: "26.3,Fabric,Java 25,Client,Server"
 
 jobs:
   release:
