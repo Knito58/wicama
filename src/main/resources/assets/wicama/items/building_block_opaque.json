@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "wicama:block/building_block_opaque"
+  }
+}
