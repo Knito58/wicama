@@ -54,6 +54,11 @@ jobs:
             relations: {projects: [{slug: "fabric-api", type: "requiredDependency"}]}
           }' > metadata.json
 
-          curl -sSf -H "X-Api-Token: $CURSEFORGE_TOKEN" \
+          echo "Metadata sent (without changelog):"
+          jq 'del(.changelog)' metadata.json
+          STATUS=$(curl -sS -o response.json -w '%{http_code}' -H "X-Api-Token: $CURSEFORGE_TOKEN" \
             -F "metadata=<metadata.json" -F "file=@$JAR" \
-            "$API/projects/$CF_PROJECT_ID/upload-file"
+            "$API/projects/$CF_PROJECT_ID/upload-file")
+          echo "CurseForge answered HTTP $STATUS:"
+          cat response.json; echo
+          [ "$STATUS" = 200 ]
