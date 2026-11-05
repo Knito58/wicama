@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "wicama",
+	"version": "${version}",
+	"name": "WICAMA - Wither Cage Material",
+	"description": "Wither-proof building blocks, opaque and see-through, to build a safe cage for fighting the Wither. Immune to the Wither and to explosions, yet quick to mine with a diamond-tier pickaxe. Made with Claude AI.",
+	"authors": [
+		"Knito58",
+		"Claude AI (Anthropic)"
+	],
+	"contact": {
+		"sources": "https://github.com/Knito58/wicama",
+		"issues": "https://github.com/Knito58/wicama/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/wicama/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"de.knito.wicama.Wicama"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

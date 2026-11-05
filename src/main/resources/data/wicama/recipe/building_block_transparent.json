@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "C": "minecraft:iron_chain",
+    "G": "#c:glass_blocks",
+    "O": "minecraft:obsidian",
+    "S": "minecraft:smooth_stone"
+  },
+  "pattern": [
+    "CGC",
+    "SOS",
+    "CGC"
+  ],
+  "result": {
+    "count": 4,
+    "id": "wicama:building_block_transparent"
+  }
+}

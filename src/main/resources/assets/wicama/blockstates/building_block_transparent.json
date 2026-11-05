@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "wicama:block/building_block_transparent"
+    }
+  }
+}

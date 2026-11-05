@@ -1,0 +1,16 @@
+{
+	"schemaVersion": 1,
+	"id": "wicama-gametest",
+	"version": "1.0.0",
+	"name": "WICAMA game tests",
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"fabric-gametest": [
+			"de.knito.wicama.gametest.WicamaGameTests"
+		]
+	},
+	"depends": {
+		"wicama": "*"
+	}
+}

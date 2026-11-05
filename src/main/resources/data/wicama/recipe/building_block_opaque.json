@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "C": "minecraft:iron_chain",
+    "O": "minecraft:obsidian",
+    "S": "minecraft:smooth_stone"
+  },
+  "pattern": [
+    "CSC",
+    "SOS",
+    "CSC"
+  ],
+  "result": {
+    "count": 4,
+    "id": "wicama:building_block_opaque"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "wicama:building_block_opaque",
+    "wicama:building_block_transparent"
+  ]
+}
