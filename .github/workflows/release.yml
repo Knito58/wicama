@@ -1,7 +1,8 @@
 name: Release to CurseForge
 
-# Create a GitHub release (tag e.g. v1.0.0) and this workflow builds the mod
-# and uploads it to CurseForge. The release text becomes the changelog.
+# Publish a GitHub release (its text becomes the changelog) or start this
+# workflow manually (the changelog then comes from CHANGELOG.md). It builds the
+# mod and uploads it to CurseForge.
 on:
   release:
     types: [published]
@@ -29,7 +30,7 @@ jobs:
       - name: Upload to CurseForge
         env:
           CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
-          CHANGELOG: ${{ github.event.release.body }}
+          CHANGELOG: ${{ github.event.release.body || '' }}
           RELEASE_NAME: ${{ github.event.release.name }}
         run: |
           set -euo pipefail
@@ -45,7 +46,8 @@ jobs:
           done | paste -sd, -)
           echo "Game version ids: $IDS"
 
-          NAME="${RELEASE_NAME:-WiCaMa $(basename "$JAR" .jar)}"
+          if [ -z "$CHANGELOG" ]; then CHANGELOG=$(cat CHANGELOG.md); fi
+          NAME="${RELEASE_NAME:-WiCaMa $(basename "$JAR" .jar | sed 's/^wicama-//')}"
           jq -n --arg log "${CHANGELOG:-Release build}" --arg name "$NAME" --argjson ids "[$IDS]" '{
             changelog: $log, changelogType: "markdown", displayName: $name,
             gameVersions: $ids, releaseType: "release",
